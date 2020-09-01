@@ -1,9 +1,10 @@
-//This code was done in cooperation of Sten Rune Lyngmo and Adrian Drevland.
-
+//This code was done in cooperation of Sten Rune Lyngmo, Mathian Fredriksen and Adrian Drevland.
+#define NOMINMAX
 #include <iostream>
 #include <string>
 #include <conio.h>
 #include <limits>
+#include <windows.h>
 
 int getintfromuser() {
 	int integer;
@@ -145,7 +146,8 @@ void task3() {
 	int age;
 	
 	system("cls");
-	std::cout << "How old are you? ";
+	std::cout << "How old are you? \n";
+	std::cout << "Age: ";
 	std::cin >> age;
 
 	//Output
@@ -167,16 +169,49 @@ void task3() {
 		std::cout << "You probably shouldn't be here. \nFuck off.";
 	}
 	std::cout << "\n\n\nPress any key to continue to another task!";
-	char heyo2 = _getch();
+	char heyo = _getch();
 }
 
 
 void task4() {
 
+	std::cout << "\n\n\nPress any key to continue to another task!";
+	char heyo = _getch();
 }
 
 void task5() {
+	std::string design;
+	
+	system("cls");
+	design += "      1   2   3   4   5   6    \n";
+	design += "     --- --- --- --- --- ---   \n";
+	design += " A  | * | * | * | * | * | * | A\n";
+	design += "     --- --- --- --- --- ---   \n";
+	design += " B  | * | * | * | * | * | * | B\n";
+	design += "     --- --- --- --- --- ---   \n";
+	design += " C  | * | * | * | * | * | * | C\n";
+	design += "     --- --- --- --- --- ---   \n";
+	design += " D  | * | * | * | * | * | * | D\n";
+	design += "     --- --- --- --- --- ---   \n";
+	design += "      1   2   3   4   5   6    \n";
 
+	for (int i = 0; i < design.length(); i++)
+	{
+		if (design.at(i) == '*')
+		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12); //Change text color to red
+			std::cout << "*";
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); //Change text color to white
+		}
+		else
+		{
+			std::cout << design.at(i);
+		}
+	}
+
+
+	std::cout << "\n\n\nPress any key to continue to another task!";
+	char heyo = _getch();
 }
 
 int main() {
@@ -197,7 +232,7 @@ choice:
 	if (complete1 && complete2 && complete3 && complete4 && complete5) {
 		system("cls");
 		std::cout << "You are done!\n\n\n\n Now go away.";
-		_getch();
+		char heyo = _getch();
 	}
 	else {
 		int choice = getintfromuser();
