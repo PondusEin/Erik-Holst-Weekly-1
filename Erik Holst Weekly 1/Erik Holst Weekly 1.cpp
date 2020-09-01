@@ -50,6 +50,7 @@ int main()
 	std::cout << "\n\nWhat's your phone number " << Fullname <<"? Don't worry, I won't share it!\n";
 	std::cout << "Phone number: ";
 	std::cin >> phone;
+
 	std::cout << "\nCool. Cool cool cool. \n\nI definitely won't share your phone number " << phone << " with the chinese government...\n\n";
 
 	std::cout << "Say, when is your birthday, " << Fullname << "? \nNot that I need it for anything non-suspicious...";
