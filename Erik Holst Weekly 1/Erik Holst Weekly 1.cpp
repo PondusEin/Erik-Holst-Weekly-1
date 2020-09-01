@@ -106,12 +106,22 @@ void task1()
 }
 
 void task2() {
-	/*std::string name = "";
-	int age = 0;
-	char answear = "0";
-	
-	//input
-	system("cls");*/
+	std::string name;
+	int age;
+	bool answer = false;
+	char YN = '0';
+
+	system("cls");
+	std::cout << "What is your name again?\n";
+	std::cin >> name;
+
+	system("cls");
+	std::cout << "Right, right... and how old are you again?\n";
+	std::cin >> age;
+
+	system("cls");
+	std::cout << "Cool Cool... Do you drink coffee?\n Y/N";
+	YN = _getch();
 }
 
 void task3() {
