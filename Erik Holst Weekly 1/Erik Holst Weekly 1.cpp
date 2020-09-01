@@ -231,7 +231,7 @@ int main() {
 choice:
 	if (complete1 && complete2 && complete3 && complete4 && complete5) {
 		system("cls");
-		std::cout << "You are done!\n\n\n\n Now go away.";
+		std::cout << "You are done!\n\n\n\nNow go away.";
 		char heyo = _getch();
 	}
 	else {
