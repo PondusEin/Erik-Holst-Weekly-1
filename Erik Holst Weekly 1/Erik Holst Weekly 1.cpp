@@ -108,7 +108,7 @@ void task1()
 void task2() {
 	std::string name;
 	int age;
-	bool answer = false;
+	std::string answertext;
 	char YN = '0';
 
 	system("cls");
@@ -120,13 +120,56 @@ void task2() {
 	std::cin >> age;
 
 	system("cls");
-	std::cout << "Cool Cool... Do you drink coffee?\n Y/N";
+	std::cout << "Cool Cool... Do you drink coffee?\n y/n";
 	YN = _getch();
+	if (YN == 'y') {
+		answertext = "Seems you like coffee";
+	}
+	else if(YN == 'n') {
+		answertext = "Oh, you don't like coffee?";
+	}
+
+	system("cls");
+	std::cout << "Your name is: " << name << std::endl;
+
+	std::cout << "You are " << age << " years old!" << std::endl;
+
+	std::cout << answertext << std::endl;
+
+	std::cout << "\n\n\nPress any key to continue to another task, " << name << "!";
+	char heyo2 = _getch();
+
 }
 
 void task3() {
+	int age;
+	
+	system("cls");
+	std::cout << "How old are you? ";
+	std::cin >> age;
 
+	//Output
+	std::cout << "Wow! You're " << age << " years old?\n";
+
+	if (age >= 60) {
+		std::cout << "You ARE really old!";
+	}
+	else if (age >= 40) {
+		std::cout << "You are old!";
+	}
+	else if (age >= 20) {
+		std::cout << "You're a grown up!";
+	}
+	else if (age < 20) {
+		std::cout << "You're really young!";
+	}
+	else {
+		std::cout << "You probably shouldn't be here. \nFuck off.";
+	}
+	std::cout << "\n\n\nPress any key to continue to another task!";
+	char heyo2 = _getch();
 }
+
 
 void task4() {
 
@@ -147,7 +190,7 @@ int main() {
 	start:
 	system("cls");
 	std::cout << "This is Erik Holst's assignment Weekly 1.\n";
-	std::cout << "It contaions 5 tasks.\n";
+	std::cout << "It contains 5 tasks.\n";
 	std::cout << "To chose a task, type a number between 1 and 5, then press enter.\n";
 
 choice:
