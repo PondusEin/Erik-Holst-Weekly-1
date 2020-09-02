@@ -108,32 +108,42 @@ void task1()
 
 void task2() {
 	std::string name;
-	int age;
+	int age2;
 	std::string answertext;
 	char YN = '0';
 
 	system("cls");
-	std::cout << "What is your name again?\n";
-	std::cin >> name;
+	std::cout << "What is your name again?\n" << std::endl;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, name); 
 
 	system("cls");
 	std::cout << "Right, right... and how old are you again?\n";
-	std::cin >> age;
-
+	std::cin >> age2; //A bug seems to happen here when you've done task one. Giving you the age of 0 automatically.
+	
 	system("cls");
-	std::cout << "Cool Cool... Do you drink coffee?\n y/n";
-	YN = _getch();
+	std::cout << "Cool Cool... Do you drink coffee?\n y/n: ";
+
+	std::cin >> YN;
+	
+
+	
 	if (YN == 'y') {
 		answertext = "Seems you like coffee";
 	}
-	else if(YN == 'n') {
+	else if (YN == 'n') {
 		answertext = "Oh, you don't like coffee?";
 	}
+	else {
+		answertext = "You'll have water then!";
+	}
+
+
 
 	system("cls");
 	std::cout << "Your name is: " << name << std::endl;
 
-	std::cout << "You are " << age << " years old!" << std::endl;
+	std::cout << "You are " << age2 << " years old!" << std::endl;
 
 	std::cout << answertext << std::endl;
 
@@ -174,6 +184,24 @@ void task3() {
 
 
 void task4() {
+	//input
+	int drink;
+	system("cls");
+	std::cout << "Hello again, what is your favourite drink? \n1. Coffee\n2. Tea\n3. Coca Cola" << std::endl;
+	std::cin >> drink;
+	if (drink == 1) {
+		std::cout << "Coffee is delicious!\n\n";
+	}
+	else if (drink == 2) {
+		std::cout << "Tea gives peace of mind!\n\n";
+	}
+	else if (drink == 3) {
+		std::cout << "Coke will give you a white smile!\n\n";
+	}
+	else {
+		system("cls");
+		std::cout << "That's not on the list, so I'll get you some water!\n\n";
+	}
 
 	std::cout << "\n\n\nPress any key to continue to another task!";
 	char heyo = _getch();
@@ -236,6 +264,7 @@ choice:
 	}
 	else {
 		int choice = getintfromuser();
+
 		if (choice == 1) {
 			task1();
 			complete1 = true;
